@@ -6,6 +6,16 @@
 <body>
 <h1>{{ first }} {{ last }}</h1>
 
-<p>GitHub Account: {{ github }}</p>
+<p><b>GitHub Account</b>: {{ github }}</p>
+<br>
+    {% if project_list %}
+        <p><b>Project Details</b>: </p>
+            <ul>
+                {% for row in project_list %}
+                    <li><b>Project</b>: <a href="/project/{{ row[0] }}">{{ row[0] }}</a>, <b>Grade</b>: {{ row[1] }}</li>
+                {% endfor %}
+            </ul>
+    {% endif %}
 </body>
 </html>
+
